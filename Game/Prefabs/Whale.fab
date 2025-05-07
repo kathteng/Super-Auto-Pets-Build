@@ -1,0 +1,113 @@
+{
+  "<Pet>WhalePet": {
+    "ItemType": 0,
+    "Health": 7,
+    "Damage": 3,
+    "MaxHealth": 7,
+    "MaxDamage": 3,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 4,
+    "Sprite": "../Assets/Texture2D/Pets/Whale.png",
+    "PetName": "Whale",
+    "Tooltip": "At start of battle, faint the friend ahead, then summon it as level 1/2/3 on faint.",
+    "<ActionSubscribe>_Kill_Actions": {
+      "Type": "StartOfBattle",
+      "<ActionIf>__Actions": {
+        "<EqualTo>Statement": {
+          "Zero": 0,
+          "LHSName": "Zero",
+          "RHSName": "Zero"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "KillFriend",
+              "Targeting": "Ahead",
+              "NumTargets": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "KillFriend",
+              "Targeting": "Ahead",
+              "NumTargets": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "KillFriend",
+              "Targeting": "Ahead",
+              "NumTargets": 1
+            }
+          }
+        ]
+      }
+    },
+      "<ActionSubscribe>_Summon_Actions": {
+        "Type": "Faint",
+        "<ActionIf>__Actions": {
+          "<And>Statement": {
+            "<EqualTo>Conditions": [
+              {
+                "LHSName": "Index",
+                "RHSName": "EventIndex"
+              },
+              {
+                "LHSName": "Team",
+                "RHSName": "EventTeam"
+              }
+            ]
+          },
+          "<ActionIf>_Ability_Actions": [
+            {
+              "<EqualTo>Statement": {
+                "One": 1,
+                "LHSName": "Level",
+                "RHSName": "One"
+              },
+              "<ActionDispatch>_BuffEvent_Actions": {
+                "Type": "WhaleSummon"
+              }
+            },
+            {
+              "<EqualTo>Statement": {
+                "Two": 2,
+                "LHSName": "Level",
+                "RHSName": "Two"
+              },
+              "<ActionDispatch>_BuffEvent_Actions": {
+                "Type": "WhaleSummon"
+              }
+            },
+            {
+              "<EqualTo>Statement": {
+                "Three": 3,
+                "LHSName": "Level",
+                "RHSName": "Three"
+              },
+              "<ActionDispatch>_BuffEvent_Actions": {
+                "Type": "WhaleSummon"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

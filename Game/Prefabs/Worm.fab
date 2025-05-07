@@ -1,0 +1,63 @@
+{
+  "<Pet>WormPet": {
+    "ItemType": 0,
+    "Health": 3,
+    "Damage": 1,
+    "MaxHealth": 3,
+    "MaxDamage": 1,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Worm_2x.png",
+    "PetName": "Worm",
+    "Tooltip": "On start of turn, stock a 2-gold Apple/Better Apple/Best Apple.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartTurn",
+      "<ActionIf>__Actions": {
+        "<NotEqual>Statement": {
+          "Zero": 0,
+          "RHSName": "Team",
+          "LHSName": "Zero"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "StockFood",
+              "Food": "CheapApple",
+              "NumFoods": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "StockFood",
+              "Food": "BetterApple",
+              "NumFoods": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "StockFood",
+              "Food": "BestApple",
+              "NumFoods": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

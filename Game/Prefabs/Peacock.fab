@@ -1,0 +1,76 @@
+{
+    "<Pet>PeacockPet": {
+        "ItemType": 0,
+        "Health": 5,
+        "Damage": 2,
+        "MaxHealth": 5,
+        "MaxDamage": 2,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 2,
+        "Sprite": "../Assets/Texture2D/Pets/Peacock.png",
+        "PetName": "Peacock",
+        "Tooltip": "When hurt, gain 3/6/9 attack.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "Hurt",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                        {
+                            "LHSName": "Index",
+                            "RHSName": "EventIndex"
+                        },
+                        {
+                            "LHSName": "Team",
+                            "RHSName": "EventTeam"
+                        }
+                    ]
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "Buff",
+                            "Targeting": "Self",
+                            "NumTargets": 1,
+                            "Health": 0,
+                            "Damage": 3
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "Buff",
+                            "Targeting": "Self",
+                            "NumTargets": 1,
+                            "Health": 0,
+                            "Damage": 6
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "Buff",
+                            "Targeting": "Self",
+                            "NumTargets": 1,
+                            "Health": 0,
+                            "Damage": 9
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

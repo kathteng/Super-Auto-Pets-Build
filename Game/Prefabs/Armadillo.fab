@@ -1,0 +1,85 @@
+{
+  "<Pet>ArmadilloPet": {
+    "ItemType": 0,
+    "Health": 10,
+    "Damage": 2,
+    "MaxHealth": 10,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 5,
+    "Sprite": "../Assets/Texture2D/Pets/Armadillo.png",
+    "PetName": "Armadillo",
+    "Tooltip": "At start of battle, give 8/16/24 health to ALL pets.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartOfBattle",
+      "<ActionList>__Actions": {
+        "<ActionIf>_Ability_Actions": [
+          {
+			  "<EqualTo>Statement": {
+				  "One": 1,
+				  "LHSName": "Level",
+				  "RHSName": "One"
+			  },
+			  "<ActionDispatch>_BuffEvent_Actions": {
+				  "Type": "Buff",
+				  "Targeting": "Random",
+				  "NumTargets": 4,
+				  "Health": 8,
+				  "Damage": 0
+			  },
+			  "<ActionDispatch>_EnemyBuff_Actions": {
+				  "Type": "ModifyEnemyStats",
+				  "Targeting": "Random",
+				  "NumTargets": 5,
+				  "Health": 8,
+				  "Damage": 0
+			  }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Health": 16,
+			  "Damage": 0
+          },
+            "<ActionDispatch>_EnemyBuff_Actions": {
+              "Type": "ModifyEnemyStats",
+              "Targeting": "Random",
+              "NumTargets": 5,
+              "Health": 16,
+			  "Damage": 0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Health": 24,
+			  "Damage": 0
+          },
+            "<ActionDispatch>_EnemyBuff_Actions": {
+              "Type": "ModifyEnemyStats",
+              "Targeting": "Random",
+              "NumTargets": 5,
+              "Health": 24,
+			  "Damage": 0
+            }
+          }
+        ]
+      }
+    }
+  }
+}

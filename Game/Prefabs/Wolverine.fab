@@ -1,0 +1,119 @@
+{
+    "<Pet>WolverinePet": {
+        "ItemType": 0,
+        "Health": 7,
+        "Damage": 5,
+        "MaxHealth": 7,
+        "MaxDamage": 5,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 6,
+        "Counter": 1,
+        "DefaultCounter": 1,
+        "Sprite": "../Assets/Texture2D/Pets/Wolverine.png",
+        "PetName": "Wolverine",
+        "Tooltip": "Every four friends hurt, remove 3/6/9 health from all enemies.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "Hurt",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<NotEqual>Conditions": {
+                        "LHSName": "EventIndex",
+                        "RHSName": "Index"
+                    },
+                    "<EqualTo>Conditions": {
+                        "LHSName": "EventTeam",
+                        "RHSName": "Team"
+                    }
+                },
+                "<ActionIncrement>_TickCounter_Actions": {
+                    "Key": "Counter",
+                    "Amount": 1.0
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "Four": 4,
+                        "One": 1,
+                        "<And>Statement": {
+                            "<EqualTo>Conditions": [
+                                {
+                                    "LHSName": "Counter",
+                                    "RHSName": "Four"
+                                },
+                                {
+                                    "LHSName": "Level",
+                                    "RHSName": "One"
+                                }
+                            ]
+                        },
+                        "<ActionDispatch>_Debuff_Actions": {
+                            "Type": "ModifyEnemyStats",
+                            "Targeting": "Random",
+                            "NumTargets": 5,
+                            "Health": -3,
+                            "Damage": 0
+                        },
+                        "<ActionSet>_ResetCounter_Actions": {
+                            "Key": "Counter",
+                            "Amount": 0.0
+                        }
+                    },
+                    {
+                        "Four": 4,
+                        "Two": 2,
+                        "<And>Statement": {
+                            "<EqualTo>Conditions": [
+                                {
+                                    "LHSName": "Counter",
+                                    "RHSName": "Four"
+                                },
+                                {
+                                    "LHSName": "Level",
+                                    "RHSName": "Two"
+                                }
+                            ]
+                        },
+                        "<ActionDispatch>_Debuff_Actions": {
+                            "Type": "ModifyEnemyStats",
+                            "Targeting": "Random",
+                            "NumTargets": 5,
+                            "Health": -6,
+                            "Damage": 0
+                        },
+                        "<ActionSet>_ResetCounter_Actions": {
+                            "Key": "Counter",
+                            "Amount": 0.0
+                        }
+                    },
+                    {
+                        "Four": 4,
+                        "Three": 3,
+                        "<And>Statement": {
+                            "<EqualTo>Conditions": [
+                                {
+                                    "LHSName": "Counter",
+                                    "RHSName": "Four"
+                                },
+                                {
+                                    "LHSName": "Level",
+                                    "RHSName": "Three"
+                                }
+                            ]
+                        },
+                        "<ActionDispatch>_Debuff_Actions": {
+                            "Type": "ModifyEnemyStats",
+                            "Targeting": "Random",
+                            "NumTargets": 5,
+                            "Health": -9,
+                            "Damage": 0
+                        },
+                        "<ActionSet>_ResetCounter_Actions": {
+                            "Key": "Counter",
+                            "Amount": 0.0
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

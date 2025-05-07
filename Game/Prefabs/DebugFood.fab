@@ -1,0 +1,11 @@
+{
+    "<Food>DebugFood": {
+        "Sprite": "../Assets/Sprite/Food/Apple_2x.png",
+        "FoodName": "Debug",
+        "Tooltip": "It's a debug food. What do you want?",
+        "Price": 3,
+        "Type": "Buff",
+        "Targets": 1,
+        "BuffAmt": 1
+    }
+}

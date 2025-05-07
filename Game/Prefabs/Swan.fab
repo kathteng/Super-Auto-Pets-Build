@@ -1,0 +1,60 @@
+{
+  "<Pet>SwanPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 1,
+    "MaxHealth": 2,
+    "MaxDamage": 1,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Swan_2x.png",
+    "PetName": "Swan",
+    "Tooltip": "On start of turn, give 1/2/3 gold.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartTurn",
+      "<ActionIf>__Actions": {
+        "<NotEqual>Statement": {
+          "Zero": 0,
+          "RHSName": "Team",
+          "LHSName": "Zero"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "GainGold",
+              "Amount" : 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "GainGold",
+              "Amount" : 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "GainGold",
+              "Amount" : 3
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "<Pet>TigerPet": {
+    "ItemType": 0,
+    "Health": 4,
+    "Damage": 6,
+    "MaxHealth": 4,
+    "MaxDamage": 6,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 6,
+    "Sprite": "../Assets/Texture2D/Pets/Tiger.png",
+    "PetName": "Tiger",
+    "Tooltip": "Pet ahead repeats their ability in battle as if they are level 1/2/3."
+  }
+}

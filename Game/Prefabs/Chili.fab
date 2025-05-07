@@ -1,0 +1,10 @@
+{
+  "<Food>ChiliFood": {
+    "Sprite": "../Assets/Texture2D/Food/Chili.png",
+    "FoodName": "Chili",
+    "Tooltip": "Give one pet the chili perk. They attack the second enemy for 5 damage",
+    "Price": 3,
+    "Type": "Perk",
+    "PerkType": 4
+  }
+}

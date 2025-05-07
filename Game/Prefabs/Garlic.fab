@@ -1,0 +1,10 @@
+{
+  "<Food>GarlicFood": {
+    "Sprite": "../Assets/Texture2D/Food/Garlic.png",
+    "FoodName": "Garlic",
+    "Tooltip": "Give one pet the garlic perk. They take 2 less damage",
+    "Price": 3,
+    "Type": "Perk",
+    "PerkType": 3
+  }
+}

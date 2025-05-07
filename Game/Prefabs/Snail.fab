@@ -1,0 +1,69 @@
+{
+  "<Pet>SnailPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 2,
+    "MaxHealth": 2,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Snail.png",
+    "PetName": "Snail",
+    "Tooltip": "At the end of turn, if you lost last battle, give friends 1/2/3 health.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "EndTurn",
+      "<ActionIf>__Actions": {
+        "<EqualTo>Statement": {
+          "Zero": 0,
+          "LHSName": "Zero",
+          "RHSName": "Zero"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Losers",
+              "NumTargets": 4,
+              "Health": 1,
+              "Damage": 0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Losers",
+              "NumTargets": 4,
+              "Health": 2,
+              "Damage": 0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Losers",
+              "NumTargets": 4,
+              "Health": 3,
+              "Damage": 0
+            }
+          }
+        ]
+      }
+    }
+  }
+}

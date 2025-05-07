@@ -1,0 +1,76 @@
+{
+  "<Pet>BeaverPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 3,
+    "MaxHealth": 2,
+    "MaxDamage": 3,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 1,
+    "Sprite": "../Assets/Sprite/Pets/Beaver.png",
+    "PetName": "Beaver",
+    "Tooltip": "On sell, give two random friends 1/2/3 attack.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Sell",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 2,
+              "Health": 0,
+              "Damage": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 2,
+              "Health": 0,
+              "Damage": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 2,
+              "Health": 0,
+              "Damage": 3
+            }
+          }
+        ]
+      }
+    }
+  }
+}

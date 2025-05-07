@@ -1,0 +1,38 @@
+{
+  "<Pet>ScorpionPet": {
+    "ItemType": 0,
+    "Health": 1,
+    "Damage": 1,
+    "MaxHealth": 1,
+    "MaxDamage": 1,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 5,
+    "Sprite": "../Assets/Texture2D/Pets/Scorpion.png",
+    "PetName": "Scorpion",
+    "Tooltip": "When summoned, gain peanut perk.",
+    "<ActionSubscribe>__Actions": {
+            "Type": "OnSummon",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                        {
+                            "LHSName": "Index",
+                            "RHSName": "EventIndex"
+                        },
+                        {
+                            "LHSName": "Team",
+                            "RHSName": "EventTeam"
+                        }
+                    ]
+                },
+                "<ActionDispatch>_GetPerk_Actions": {
+                    "Type": "GivePerk",
+                    "Targeting": "Self",
+                    "NumTargets": 1,
+                    "Perk": 9
+                }
+            }
+        }
+    }
+}

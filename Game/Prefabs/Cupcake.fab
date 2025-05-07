@@ -1,0 +1,11 @@
+{
+  "<Food>CupcakeFood": {
+    "Sprite": "../Assets/Texture2D/Food/Muffin_2x.png",
+    "FoodName": "Cupcake",
+    "Tooltip": "Give one pet +3/3 until next turn",
+    "Price": 3,
+    "Type": "TempBuff",
+    "Targets": 1,
+    "BuffAmt": 3
+  }
+}

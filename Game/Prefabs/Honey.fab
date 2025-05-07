@@ -1,0 +1,10 @@
+{
+  "<Food>HoneyFood": {
+    "Sprite": "../Assets/Texture2D/Food/Honey.png",
+    "FoodName": "Honey",
+    "Tooltip": "Give one pet the honey perk. They summon a 1/1 bee on faint",
+    "Price": 3,
+    "Type": "Perk",
+    "PerkType": 1
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "<Pet>SheepPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 2,
+    "MaxHealth": 2,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 3,
+    "Sprite": "../Assets/Texture2D/Pets/Sheep.png",
+    "PetName": "Sheep",
+    "Tooltip": "On faint, summon two 2/2 Rams/two 4/4 Rams/two 6/6 Rams.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "Summon",
+              "Summon": "Ram",
+              "NumSummons": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "Summon",
+              "Summon": "Ram",
+              "NumSummons": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "Summon",
+              "Summon": "Ram",
+              "NumSummons": 2
+            }
+          }
+        ]
+      }
+    }
+  }
+}

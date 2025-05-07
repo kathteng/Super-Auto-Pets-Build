@@ -1,0 +1,11 @@
+{
+  "<Food>PizzaFood": {
+    "Sprite": "../Assets/Sprite/Food/Pizza_2x.png",
+    "FoodName": "Pizza",
+    "Tooltip": "Give two random pets +2/2",
+    "Price": 3,
+    "Type": "Buff",
+    "Targets": 2,
+    "BuffAmt": 2
+  }
+}

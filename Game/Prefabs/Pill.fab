@@ -1,0 +1,9 @@
+{
+  "<Food>PillFood": {
+    "Sprite": "../Assets/Texture2D/Food/Pill.png",
+    "FoodName": "Pill",
+    "Tooltip": "Make one pet faint. Always on sale!",
+    "Price": 1,
+    "Type": "Pill"
+  }
+}

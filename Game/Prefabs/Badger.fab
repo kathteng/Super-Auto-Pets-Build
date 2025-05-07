@@ -1,0 +1,67 @@
+{
+  "<Pet>BadgerPet": {
+    "ItemType": 0,
+    "Health": 3,
+    "Damage": 6,
+    "MaxHealth": 3,
+    "MaxDamage": 6,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 3,
+    "Sprite": "../Assets/Texture2D/Pets/Badger_2x.png",
+    "PetName": "Badger",
+    "Tooltip": "On faint, deal 50/100/150% of attack as damage to adjacent pets.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Badger",
+              "DamagePercent": 0.5
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Badger",
+              "DamagePercent": 1.0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Badger",
+              "DamagePercent": 1.5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

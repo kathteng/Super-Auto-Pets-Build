@@ -1,0 +1,12 @@
+{
+  "<Food>BestMilkFood": {
+    "Sprite": "../Assets/Texture2D/Food/Milk3.png",
+    "FoodName": "BestMilk",
+    "Tooltip": "Give one pet +3/6",
+    "Price": 0,
+    "Type": "Buff",
+    "Targets": 1,
+    "BuffAmt": 3,
+    "HealthMult": 2
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "<Pet>DragonPet": {
+    "ItemType": 0,
+    "Health": 8,
+    "Damage": 6,
+    "MaxHealth": 8,
+    "MaxDamage": 6,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 6,
+    "Sprite": "../Assets/Sprite/Pets/Dragon.png",
+    "PetName": "Dragon",
+    "Tooltip": "On buy tier 1 friend, give friends 1/2/3 health and 1/2/3 damage.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Buy",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+            "One" : 1,
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            },
+            {
+                "LHSName" : "PetTier",
+                "RHSName" : "One"
+            }
+            ],
+            "<NotEqual>Conditions" : {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            }
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Health": 1,
+              "Damage": 1
+            }
+          },
+            {
+                "<EqualTo>Statement": {
+                    "Two": 2,
+                    "LHSName": "Level",
+                    "RHSName": "Two"
+                },
+                "<ActionDispatch>_BuffEvent_Actions": {
+                    "Type": "Buff",
+                    "Targeting": "Random",
+                    "NumTargets": 4,
+                    "Health": 2,
+                    "Damage": 2
+                }
+            },
+            {
+                "<EqualTo>Statement": {
+                    "Three": 3,
+                    "LHSName": "Level",
+                    "RHSName": "Three"
+                },
+                "<ActionDispatch>_BuffEvent_Actions": {
+                    "Type": "Buff",
+                    "Targeting": "Random",
+                    "NumTargets": 4,
+                    "Health": 2,
+                    "Damage": 2
+                }
+            }
+        ]
+      }
+    }
+  }
+}

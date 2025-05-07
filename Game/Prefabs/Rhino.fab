@@ -1,0 +1,73 @@
+{
+    "<Pet>RhinoPet": {
+        "ItemType": 0,
+        "Health": 7,
+        "Damage": 6,
+        "MaxHealth": 7,
+        "MaxDamage": 6,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 5,
+        "Sprite": "../Assets/Sprite/Pets/Rhino.png",
+        "PetName": "Rhino",
+        "Tooltip": "On knock out, deal 4/8/12 damage to the first enemy.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "KnockOut",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                        {
+                            "LHSName": "Index",
+                            "RHSName": "EventIndex"
+                        },
+                        {
+                            "LHSName": "Team",
+                            "RHSName": "EventTeam"
+                        }
+                    ]
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Frontmost",
+                            "NumTargets": 1,
+                            "Damage": 4
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Frontmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Frontmost",
+                            "NumTargets": 1,
+                            "Damage": 12
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "<Pet>DogPet": {
+        "ItemType": 0,
+        "Health": 2,
+        "Damage": 3,
+        "MaxHealth": 2,
+        "MaxDamage": 3,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 3,
+        "Sprite": "../Assets/Texture2D/Pets/Dog.png",
+        "PetName": "Dog",
+        "Tooltip": "On friend summoned, gain 2/4/6 attack and 1/2/3 health until next turn.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "OnSummon",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<NotEqual>Conditions": {
+                        "LHSName": "Index",
+                        "RHSName": "EventIndex"
+                    },
+                    "<EqualTo>Conditions": {
+                        "LHSName": "Team",
+                        "RHSName": "EventTeam"
+                    }
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "TempBuff",
+                            "Targeting": "Self",
+                            "NumTargets": 1,
+                            "Health": 1,
+                            "Damage": 2
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "TempBuff",
+                            "Targeting": "Self",
+                            "NumTargets": 1,
+                            "Health": 2,
+                            "Damage": 4
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "TempBuff",
+                            "Targeting": "Self",
+                            "NumTargets": 1,
+                            "Health": 3,
+                            "Damage": 6
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

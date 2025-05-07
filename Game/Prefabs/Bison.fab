@@ -1,0 +1,69 @@
+{
+  "<Pet>BisonPet": {
+    "ItemType": 0,
+    "Health": 4,
+    "Damage": 4,
+    "MaxHealth": 4,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 4,
+    "Sprite": "../Assets/Texture2D/Pets/Bison.png",
+    "PetName": "Monkey",
+    "Tooltip": "At the end of turn, gain 1/2/3 attack and 2/4/6 health if another pet on the team is level 3.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "EndTurn",
+        "<ActionIf>__Actions": {
+            "<NotEqual>Statement": {
+                "Zero": 0,
+                "RHSName": "Team",
+                "LHSName": "Zero"
+            },
+            "<ActionIf>_Ability_Actions": [
+                {
+                    "<EqualTo>Statement": {
+                        "One": 1,
+                        "LHSName": "Level",
+                        "RHSName": "One"
+                    },
+                    "<ActionDispatch>_DamageEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "NeedsLevel3",
+                        "NumTargets": 1,
+                        "Health": 2,
+                        "Damage": 1
+                    }
+                },
+                {
+                    "<EqualTo>Statement": {
+                        "Two": 2,
+                        "LHSName": "Level",
+                        "RHSName": "Two"
+                    },
+                    "<ActionDispatch>_DamageEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "NeedsLevel3",
+                        "NumTargets": 1,
+                        "Health": 4,
+                        "Damage": 2
+                    }
+                },
+                {
+                    "<EqualTo>Statement": {
+                        "Three": 3,
+                        "LHSName": "Level",
+                        "RHSName": "Three"
+                    },
+                    "<ActionDispatch>_DamageEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "NeedsLevel3",
+                        "NumTargets": 1,
+                        "Health": 6,
+                        "Damage": 3
+                    }
+                }
+            ]
+        }
+    }
+  }
+}

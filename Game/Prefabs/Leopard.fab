@@ -1,0 +1,66 @@
+{
+  "<Pet>LeopardPet": {
+    "ItemType": 0,
+    "Health": 4,
+    "Damage": 10,
+    "MaxHealth": 4,
+    "MaxDamage": 10,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 6,
+    "Sprite": "../Assets/Texture2D/Pets/Leopard_2x.png",
+    "PetName": "Leopard",
+    "Tooltip": "On start of battle, deal 50% attack to 1/2/3 random enemies.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartOfBattle",
+      "<ActionIf>__Actions": {
+        "<EqualTo>Statement": {
+          "Zero": 0,
+          "LHSName": "Zero",
+          "RHSName": "Zero"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "PercentDamage",
+              "Targeting": "Random",
+              "NumTargets": 1,
+              "DamagePercent": 0.5
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "PercentDamage",
+              "Targeting": "Random",
+              "NumTargets": 2,
+              "DamagePercent": 0.5
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "PercentDamage",
+              "Targeting": "Random",
+              "NumTargets": 3,
+              "DamagePercent": 0.5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+    "<Pet>MosquitoPet": {
+        "ItemType": 0,
+        "Health": 2,
+        "Damage": 2,
+        "MaxHealth": 2,
+        "MaxDamage": 2,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 1,
+        "Sprite": "../Assets/Texture2D/Pets/Mosquito.png",
+        "PetName": "Mosquito",
+        "Tooltip": "At start of battle, deal 1 damage to 1/2/3 random enemies.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "StartOfBattle",
+            "<ActionIf>__Actions": {
+                "<EqualTo>Statement": {
+                    "Zero": 0,
+                    "LHSName": "Zero",
+                    "RHSName": "Zero"
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 2
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

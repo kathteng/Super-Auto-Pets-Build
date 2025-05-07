@@ -1,0 +1,76 @@
+{
+    "<Pet>CamelPet": {
+        "ItemType": 0,
+        "Health": 4,
+        "Damage": 3,
+        "MaxHealth": 4,
+        "MaxDamage": 3,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 3,
+        "Sprite": "../Assets/Texture2D/Pets/Camel.png",
+        "PetName": "Camel",
+        "Tooltip": "On hurt, give the nearest friend behind 1/2/3 attack and 2/4/6 health.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "Hurt",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                        {
+                            "LHSName": "Index",
+                            "RHSName": "EventIndex"
+                        },
+                        {
+                            "LHSName": "Team",
+                            "RHSName": "EventTeam"
+                        }
+                    ]
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "Buff",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Health": 2,
+                            "Damage": 1
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "Buff",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Health": 4,
+                            "Damage": 2
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_BuffEvent_Actions": {
+                            "Type": "Buff",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Health": 6,
+                            "Damage": 3
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

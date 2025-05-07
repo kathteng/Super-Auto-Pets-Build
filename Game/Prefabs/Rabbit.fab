@@ -1,0 +1,81 @@
+{
+  "<Pet>RabbitPet": {
+    "ItemType": 0,
+    "Health": 1,
+    "Damage": 2,
+    "MaxHealth": 1,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 3,
+    "Counter" : 0,
+    "DefaultCounter" : 0,
+    "Sprite": "../Assets/Texture2D/Pets/Rabbit.png",
+    "PetName": "Rabbit",
+    "Tooltip": "When friend eats food, give it 1/2/3 health. Works 4 times per turn.",
+    "<ActionSubscribe>__Actions": {
+        "Type": "AteFood",
+        "<ActionIf>_Ability_Actions": {
+            "Four" :  4,
+            "<And>Statement": {
+                "<EqualTo>Conditions": {
+                    "LHSName": "Team",
+                    "RHSName": "EventTeam"
+                },
+                "<LessThan>Conditions": {
+                    "LHSName": "Counter",
+                    "RHSName": "Four"
+                }
+            },
+            "<ActionIf>_Ability_Actions": [
+                {
+                    "<EqualTo>Statement": {
+                        "One": 1,
+                        "LHSName": "Level",
+                        "RHSName": "One"
+                    },
+                    "<ActionDispatch>_BuffEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "Ate",
+                        "NumTargets": 1,
+                        "Health": 1,
+                        "Damage": 0
+                    }
+                },
+                {
+                    "<EqualTo>Statement": {
+                        "Two": 2,
+                        "LHSName": "Level",
+                        "RHSName": "Two"
+                    },
+                    "<ActionDispatch>_BuffEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "Ate",
+                        "NumTargets": 1,
+                        "Health": 2,
+                        "Damage": 0
+                    }
+                },
+                {
+                    "<EqualTo>Statement": {
+                        "Three": 3,
+                        "LHSName": "Level",
+                        "RHSName": "Three"
+                    },
+                    "<ActionDispatch>_BuffEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "Ate",
+                        "NumTargets": 1,
+                        "Health": 3,
+                        "Damage": 0
+                    }
+                }
+            ],
+            "<ActionIncrement>_TickCounter_Actions": {
+                "Key": "Counter",
+                "Amount" :  1.0
+            }
+        }
+    }
+  }
+}

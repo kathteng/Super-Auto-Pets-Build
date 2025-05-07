@@ -1,0 +1,10 @@
+{
+  "<Food>SteakFood": {
+    "Sprite": "../Assets/Texture2D/Food/Steak.png",
+    "FoodName": "Steak",
+    "Tooltip": "Give one pet the steak perk. They attack for 20 extra damage, once",
+    "Price": 3,
+    "Type": "Perk",
+    "PerkType": 7
+  }
+}

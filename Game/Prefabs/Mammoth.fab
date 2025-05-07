@@ -1,0 +1,76 @@
+{
+  "<Pet>MammothPet": {
+    "ItemType": 0,
+    "Health": 12,
+    "Damage": 4,
+    "MaxHealth": 12,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 6,
+    "Sprite": "../Assets/Texture2D/Pets/Mammoth.png",
+    "PetName": "Mammoth",
+    "Tooltip": "On faint, give friends 2/4/6 attack and 2/4/6 health.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+			  "<EqualTo>Statement": {
+				  "One": 1,
+				  "LHSName": "Level",
+				  "RHSName": "One"
+			  },
+			  "<ActionDispatch>_BuffEvent_Actions": {
+				  "Type": "Buff",
+				  "Targeting": "Random",
+				  "NumTargets": 4,
+				  "Health": 2,
+				  "Damage": 2
+			  }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Health": 4,
+			  "Damage": 4
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Health": 6,
+			  "Damage": 6
+            }
+          }
+        ]
+      }
+    }
+  }
+}

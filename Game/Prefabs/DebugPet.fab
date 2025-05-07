@@ -1,0 +1,15 @@
+{
+    "<Pet>DebugPet": {
+        "ItemType": 0,
+        "Health": 2,
+        "Damage": 2,
+        "MaxHealth": 2,
+        "MaxDamage": 2,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 1,
+        "Sprite": "../Assets/Texture2D/Pets/Monty.png",
+        "PetName": "Debug",
+        "Tooltip": "It's a debug pet. what do you want?"
+    }
+}

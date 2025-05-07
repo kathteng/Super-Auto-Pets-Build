@@ -1,0 +1,76 @@
+{
+  "<Pet>HippoPet": {
+    "ItemType": 0,
+    "Health": 6,
+    "Damage": 4,
+    "MaxHealth": 6,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 4,
+    "Sprite": "../Assets/Texture2D/Pets/Hippo.png",
+    "PetName": "Hippo",
+    "Tooltip":  "On knock out, gain 3/6/9 attack and 3/6/9 health.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "KnockOut",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Self",
+              "NumTargets": 1,
+              "Health": 2,
+              "Damage": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Self",
+              "NumTargets": 1,
+              "Health": 4,
+              "Damage": 4
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Self",
+              "NumTargets": 1,
+              "Health": 4,
+              "Damage": 4
+            }
+          }
+        ]
+      }
+    }
+  }
+}

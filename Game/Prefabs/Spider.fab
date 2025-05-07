@@ -1,0 +1,64 @@
+{
+  "<Pet>SpiderPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 2,
+    "MaxHealth": 2,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Spider.png",
+    "PetName": "Spider",
+    "Tooltip": "On faint, summon a random pet from tier 3 as a (2/4/6)/(2/4/6) level 1/2/3.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "SummonTierThree"
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "SummonTierThree"
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "SummonTierThree"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

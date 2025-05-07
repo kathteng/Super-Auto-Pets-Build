@@ -1,0 +1,63 @@
+{
+  "<Pet>CrabPet": {
+    "ItemType": 0,
+    "Health": 1,
+    "Damage": 4,
+    "MaxHealth": 1,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Crab.png",
+    "PetName": "Crab",
+    "Tooltip": "At start of battle, copy 50/100/150% of health from the most healthy friend.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartOfBattle",
+      "<ActionIf>__Actions": {
+        "<NotEqual>Statement": {
+          "Two": 2,
+          "LHSName": "Team",
+          "RHSName": "Two"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "CopyPercentHealth",
+              "Targeting": "MostHealth",
+              "Percent": 0.5
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "CopyPercentHealth",
+              "Targeting": "MostHealth",
+              "Percent": 1.0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "CopyPercentHealth",
+              "Targeting": "MostHealth",
+              "Percent": 1.5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

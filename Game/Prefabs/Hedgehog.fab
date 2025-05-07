@@ -1,0 +1,91 @@
+{
+  "<Pet>HedgehogPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 4,
+    "MaxHealth": 2,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Hedgehog_2x.png",
+    "PetName": "Hedgehog",
+    "Tooltip": "On faint, deal 2/4/6 damage to ALL pets.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageFriendEvent_Actions": {
+              "Type": "DamageFriend",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Damage": 2
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Damage",
+              "Targeting": "Random",
+              "NumTargets": 5,
+              "Damage": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageFriendEvent_Actions": {
+              "Type": "DamageFriend",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Damage": 4
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Damage",
+              "Targeting": "Random",
+              "NumTargets": 5,
+              "Damage": 4
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageFriendEvent_Actions": {
+              "Type": "DamageFriend",
+              "Targeting": "Random",
+              "NumTargets": 4,
+              "Damage": 6
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "Damage",
+              "Targeting": "Random",
+              "NumTargets": 5,
+              "Damage": 6
+            }
+          }
+        ]
+      }
+    }
+  }
+}

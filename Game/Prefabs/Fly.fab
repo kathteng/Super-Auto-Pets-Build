@@ -1,0 +1,45 @@
+{
+  "<Pet>FlyPet": {
+    "ItemType": 0,
+    "Health": 4,
+    "Damage": 4,
+    "MaxHealth": 4,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 6,
+    "Counter": 0,
+    "DefaultCounter": 0,
+    "Sprite": "../Assets/Sprite/Pets/Fly.png",
+    "PetName": "Fly",
+    "Tooltip": "When a friend faints, summon one (4/8/12)/(4/8/12) fly in its place. Works 3 times per turn",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": {
+            "LHSName": "Team",
+            "RHSName": "EventTeam"
+          },
+          "<NotEqual>Conditions": {
+            "LHSName": "Index",
+            "RHSName": "EventIndex"
+          },
+          "<LessThan>Conditions": {
+            "Three": 3,
+            "LHSName": "Counter",
+            "RHSName": "Three"
+          }
+        },
+        "<ActionDispatch>_SummonEvent_Actions": {
+          "Type": "Summon",
+          "Summon": "ZombieFly"
+        },
+        "<ActionIncrement>_TickCounter_Actions": {
+          "Key": "Counter",
+          "Amount": 1.0
+        }
+      }
+    }
+  }
+}

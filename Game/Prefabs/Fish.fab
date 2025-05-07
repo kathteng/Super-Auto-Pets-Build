@@ -1,0 +1,62 @@
+{
+  "<Pet>FishPet": {
+    "ItemType": 0,
+    "Health": 3,
+    "Damage": 2,
+    "MaxHealth": 3,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 1,
+    "Sprite": "../Assets/Texture2D/Pets/Fish_2x.png",
+    "PetName": "Fish",
+    "Tooltip": "On level, give two friends +1/2 health and +1/2 damage.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "LevelUp",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 2,
+              "Health": 1,
+              "Damage": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 2,
+              "Health": 2,
+              "Damage": 2
+            }
+          }
+        ]
+      }
+    }
+  }
+}

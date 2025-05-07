@@ -1,0 +1,67 @@
+{
+    "<Pet>CricketPet": {
+        "ItemType": 0,
+        "Health": 3,
+        "Damage": 1,
+        "MaxHealth": 3,
+        "MaxDamage": 1,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 1,
+        "Sprite": "../Assets/Sprite/Pets/Cricket.png",
+        "PetName": "Cricket",
+        "Tooltip": "On faint, summon one 1/1 Cricket/one 2/2 Cricket/one 3/3 Cricket.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "Faint",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                        {
+                            "LHSName": "Index",
+                            "RHSName": "EventIndex"
+                        },
+                        {
+                            "LHSName": "Team",
+                            "RHSName": "EventTeam"
+                        }
+                    ]
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_SummonEvent_Actions": {
+                            "Type": "Summon",
+                            "Summon": "ZombieCricket"
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_SummonEvent_Actions": {
+                            "Type": "Summon",
+                            "Summon": "ZombieCricket"
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_SummonEvent_Actions": {
+                            "Type": "Summon",
+                            "Summon": "ZombieCricket"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

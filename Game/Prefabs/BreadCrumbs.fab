@@ -1,0 +1,12 @@
+{
+  "<Food>BreadCrumbsFood": {
+    "Sprite": "../Assets/Texture2D/Food/BreadCrumbs.png",
+    "FoodName": "BreadCrumbs",
+    "Tooltip": "Give one pet +1/0",
+    "Price": 0,
+    "Type": "Buff",
+    "Targets": 1,
+    "BuffAmt": 1,
+    "HealthMult": 0
+  }
+}

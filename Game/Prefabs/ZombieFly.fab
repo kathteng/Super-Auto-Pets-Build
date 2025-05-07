@@ -1,0 +1,14 @@
+{
+  "<Pet>ZombieFlyPet": {
+    "ItemType": 0,
+    "Health": 4,
+    "Damage": 4,
+    "MaxHealth": 4,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 1,
+    "Sprite": "../Assets/Texture2D/Pets/FlyToken_2x.png",
+    "PetName": "ZombieFly"
+  }
+}

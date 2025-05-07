@@ -1,0 +1,84 @@
+{
+    "<Pet>CrocodilePet": {
+        "ItemType": 0,
+        "Health": 4,
+        "Damage": 8,
+        "MaxHealth": 4,
+        "MaxDamage": 8,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 5,
+        "Sprite": "../Assets/Texture2D/Pets/Crocodile.png",
+        "PetName": "Crocodile",
+        "Tooltip": "At start of battle, deal 8 damage to last enemy. Triggers 1/2/3 time(s).",
+        "<ActionSubscribe>__Actions": {
+            "Type": "StartOfBattle",
+            "<ActionIf>__Actions": {
+                "<EqualTo>Statement": {
+                    "Zero": 0,
+                    "LHSName": "Zero",
+                    "RHSName": "Zero"
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Backmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Backmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        },
+                        "<ActionDispatch>_DamageEventAgain_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Backmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Backmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        },
+                        "<ActionDispatch>_DamageEventAgain_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Backmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        },
+                        "<ActionDispatch>_DamageEventAgainSaltyRunback_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Backmost",
+                            "NumTargets": 1,
+                            "Damage": 8
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

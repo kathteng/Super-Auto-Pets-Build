@@ -1,0 +1,86 @@
+{
+  "<ActionList>_AddXP_Actions" : {
+    "<ActionIf>_NotMaxLevel_Actions": {
+        "Three": 3,
+        "Two": 2,
+        "One": 1,
+        "<NotEqual>Statement": {
+            "LHSName": "Level",
+            "RHSName": "Three"
+        },
+
+        "<ActionIncrement>_IncreaseXP_Actions": {
+            "Key": "XP",
+            "Amount": 1.0
+        },
+
+        "<ActionIncrement>_IncreaseHealth_Actions": {
+            "Key": "Health",
+            "Amount": 1.0
+        },
+
+        "<ActionIncrement>_IncreaseDamage_Actions": {
+            "Key": "Damage",
+            "Amount": 1.0
+        },
+
+        "<ActionIncrement>_IncreaseMaxHealth_Actions": {
+            "Key": "MaxHealth",
+            "Amount": 1.0
+        },
+
+        "<ActionIncrement>_IncreaseMaxDamage_Actions": {
+            "Key": "MaxDamage",
+            "Amount": 1.0
+        },
+
+        "<ActionIf>_IsLevel1_Actions": {
+            "<EqualTo>Statement": {
+                "LHSName": "Level",
+                "RHSName": "One"
+            },
+
+            "<ActionIf>_CanLevelTo2_Actions": {
+                "<EqualTo>Statement": {
+                    "LHSName": "XP",
+                    "RHSName": "Two"
+                },
+
+                "<ActionSet>_LevelUp_Actions": {
+                    "Key": "Level",
+                    "Amount": 2.0
+                },
+
+                "<ActionSet>_ResetXP_Actions": {
+                    "Key": "XP",
+                    "Amount": 0.0
+                }
+            }
+        },
+
+        "<ActionIf>_IsLevel2_Actions": {
+            "<EqualTo>Statement": {
+                "LHSName": "Level",
+                "RHSName": "Two"
+            },
+
+            "<ActionIf>_CanLevelTo2_Actions": {
+                "<EqualTo>Statement": {
+                    "LHSName": "XP",
+                    "RHSName": "Three"
+                },
+
+                "<ActionSet>_LevelUp_Actions": {
+                    "Key": "Level",
+                    "Amount": 3.0
+                },
+
+                "<ActionSet>_ResetXP_Actions": {
+                    "Key": "XP",
+                    "Amount": 0.0
+                }
+            }
+        }
+    }
+  }
+}

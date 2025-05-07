@@ -1,0 +1,70 @@
+{
+  "<Pet>CowPet": {
+    "ItemType": 0,
+    "Health": 6,
+    "Damage": 4,
+    "MaxHealth": 6,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 5,
+    "Sprite": "../Assets/Texture2D/Pets/Cow_2x.png",
+    "PetName": "Cow",
+    "Tooltip": "On buy, replace shop food with 2 free milk/better milk/best milk.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Buy",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "ReplaceFood",
+              "Food": "Milk",
+              "NumFoods": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "ReplaceFood",
+              "Food": "BetterMilk",
+              "NumFoods": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "ReplaceFood",
+              "Food": "BestMilk",
+              "NumFoods": 2
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+    "<Pet>CamelPet": {
+        "ItemType": 0,
+        "Health": 3,
+        "Damage": 2,
+        "MaxHealth": 3,
+        "MaxDamage": 2,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 2,
+        "Sprite": "../Assets/Texture2D/Pets/Kangaroo_2x.png",
+        "PetName": "Kangaroo",
+        "Tooltip": "When friend ahead attacks, gain 1/2/3 attack and 1/2/3 health.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "AfterAttack",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "One": 1,
+                    "<EqualTo>Conditions": {
+                            "LHSName": "Index",
+                            "RHSName": "One"
+                    },
+                    "<NotEqual>Conditions": {
+                        "Two":  2,
+                        "LHSName": "Team",
+                        "RHSName": "Two"
+                    }
+                },
+                    "<ActionIf>_Ability_Actions": [
+                        {
+                            "<EqualTo>Statement": {
+                                "One": 1,
+                                "LHSName": "Level",
+                                "RHSName": "One"
+                            },
+                            "<ActionDispatch>_BuffEvent_Actions": {
+                                "Type": "Buff",
+                                "Targeting": "Self",
+                                "NumTargets": 1,
+                                "Health": 1,
+                                "Damage": 1
+                            }
+                        },
+                        {
+                            "<EqualTo>Statement": {
+                                "Two": 2,
+                                "LHSName": "Level",
+                                "RHSName": "Two"
+                            },
+                            "<ActionDispatch>_BuffEvent_Actions": {
+                                "Type": "Buff",
+                                "Targeting": "Self",
+                                "NumTargets": 1,
+                                "Health": 2,
+                                "Damage": 2
+                            }
+                        },
+                        {
+                            "<EqualTo>Statement": {
+                                "Three": 3,
+                                "LHSName": "Level",
+                                "RHSName": "Three"
+                            },
+                            "<ActionDispatch>_BuffEvent_Actions": {
+                                "Type": "Buff",
+                                "Targeting": "Self",
+                                "NumTargets": 1,
+                                "Health": 3,
+                                "Damage": 3
+                            }
+                        }
+                    ]
+                }
+            }
+    }
+}

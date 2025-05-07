@@ -1,0 +1,9 @@
+{
+  "<Food>ChocolateFood": {
+    "Sprite": "../Assets/Texture2D/Food/Chocolate3_2x.png",
+    "FoodName": "Chocolate",
+    "Tooltip": "Give one pet +1 xp",
+    "Price": 3,
+    "Type": "Chocolate"
+  }
+}

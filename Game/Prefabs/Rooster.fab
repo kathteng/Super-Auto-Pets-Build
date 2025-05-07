@@ -1,0 +1,73 @@
+{
+  "<Pet>RoosterPet": {
+    "ItemType": 0,
+    "Health": 4,
+    "Damage": 6,
+    "MaxHealth": 4,
+    "MaxDamage": 6,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 5,
+    "Sprite": "../Assets/Texture2D/Pets/Rooster_2x.png",
+    "PetName": "Rooster",
+    "Tooltip": "On faint, summon 1/2/3 chicks with 1 health and 50% of this attack.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "SummonPercentAttack",
+              "Summon": "Chick",
+              "NumSummons": 1,
+              "Percent": 0.5
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "SummonPercentAttack",
+              "Summon": "Chick",
+              "NumSummons": 2,
+              "Percent": 0.5
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "SummonPercentAttack",
+              "Summon": "Chick",
+              "NumSummons": 3,
+              "Percent": 0.5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

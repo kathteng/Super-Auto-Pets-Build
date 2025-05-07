@@ -1,0 +1,63 @@
+{
+  "<Pet>SkunkPet": {
+    "ItemType": 0,
+    "Health": 5,
+    "Damage": 3,
+    "MaxHealth": 5,
+    "MaxDamage": 3,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 4,
+    "Sprite": "../Assets/Texture2D/Pets/Skunk.png",
+    "PetName": "Skunk",
+    "Tooltip": "At start of battle, remove 33/66/99% of health from the highest health enemy.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartOfBattle",
+      "<ActionIf>__Actions": {
+        "<NotEqual>Statement": {
+          "Two": 2,
+          "LHSName": "Team",
+          "RHSName": "Two"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "SetEnemyHealthPercent",
+              "Targeting": "MostHealth",
+              "Percent": 0.33
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "SetEnemyHealthPercent",
+              "Targeting": "MostHealth",
+              "Percent": 0.66
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "SetEnemyHealthPercent",
+              "Targeting": "MostHealth",
+              "Percent": 0.99
+            }
+          }
+        ]
+      }
+    }
+  }
+}

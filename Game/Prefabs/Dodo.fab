@@ -1,0 +1,63 @@
+{
+  "<Pet>DodoPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 3,
+    "MaxHealth": 2,
+    "MaxDamage": 3,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 3,
+    "Sprite": "../Assets/Texture2D/Pets/Dodo.png",
+    "PetName": "Dodo",
+    "Tooltip": "At start of battle, deal 50/100/150% of attack to the friend ahead.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartOfBattle",
+      "<ActionIf>__Actions": {
+        "<NotEqual>Statement": {
+          "Two": 2,
+          "LHSName": "Team",
+          "RHSName": "Two"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "PercentBuff",
+              "AttackPercent": 0.5,
+              "HealthPercent": 0.0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "PercentBuff",
+              "AttackPercent": 1.0,
+              "HealthPercent": 0.0
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_DamageEvent_Actions": {
+              "Type": "PercentBuff",
+              "AttackPercent": 1.5,
+              "HealthPercent": 0.0
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "<Food>MushroomFood": {
+    "Sprite": "../Assets/Texture2D/Food/Mushroom_2x.png",
+    "FoodName": "Mushroom",
+    "Tooltip": "Give one pet the mushroom perk. They come back as a 1/1 after fainting",
+    "Price": 3,
+    "Type": "Perk",
+    "PerkType": 6
+  }
+}

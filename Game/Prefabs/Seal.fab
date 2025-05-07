@@ -1,0 +1,76 @@
+{
+    "<Pet>SealPet": {
+        "ItemType": 0,
+            "Health" : 8,
+            "Damage" : 3,
+            "MaxHealth" : 8,
+            "MaxDamage" : 3,
+            "XP" : 0,
+            "Level" : 1,
+            "Tier" : 5,
+            "Sprite" : "../Assets/Sprite/Pets/Seal_2x.png",
+            "PetName" : "Camel",
+            "Tooltip" : "On eats food, gives 3 friends 1/2/3 attack.",
+            "<ActionSubscribe>__Actions" : {
+            "Type": "AteFood",
+                "<ActionIf>__Actions" : {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                    {
+                        "LHSName": "Index",
+                            "RHSName" : "EventIndex"
+                    },
+                        {
+                            "LHSName": "Team",
+                            "RHSName" : "EventTeam"
+                        }
+                    ]
+                },
+                    "<ActionIf>_Ability_Actions": [
+                {
+                    "<EqualTo>Statement": {
+                        "One": 1,
+                            "LHSName" : "Level",
+                            "RHSName" : "One"
+                    },
+                        "<ActionDispatch>_BuffEvent_Actions" : {
+                        "Type": "Buff",
+                            "Targeting" : "Random",
+                            "NumTargets" : 3,
+                            "Health" : 0,
+                            "Damage" : 1
+                    }
+                },
+                        {
+                            "<EqualTo>Statement": {
+                                "Two": 2,
+                                "LHSName": "Level",
+                                "RHSName": "Two"
+                            },
+                            "<ActionDispatch>_BuffEvent_Actions": {
+                                "Type": "Buff",
+                                "Targeting": "Random",
+                                "NumTargets": 3,
+                                "Health": 0,
+                                "Damage": 2
+                            }
+                        },
+                        {
+                            "<EqualTo>Statement": {
+                                "Three": 3,
+                                "LHSName": "Level",
+                                "RHSName": "Three"
+                            },
+                            "<ActionDispatch>_BuffEvent_Actions": {
+                                "Type": "Buff",
+                                "Targeting": "Random",
+                                "NumTargets": 3,
+                                "Health": 0,
+                                "Damage": 3
+                            }
+                        }
+                    ]
+            }
+        }
+    }
+}

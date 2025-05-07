@@ -1,0 +1,10 @@
+{
+  "<Food>ChiliFood": {
+    "Sprite": "../Assets/Texture2D/Food/Melon.png",
+    "FoodName": "Melon",
+    "Tooltip": "Give one pet the melon perk. They take 20 less damage, once",
+    "Price": 3,
+    "Type": "Perk",
+    "PerkType": 5
+  }
+}

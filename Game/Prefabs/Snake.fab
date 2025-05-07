@@ -1,0 +1,66 @@
+{
+    "<Pet>SnakePet": {
+        "ItemType": 0,
+        "Health": 3,
+        "Damage": 8,
+        "MaxHealth": 3,
+        "MaxDamage": 8,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 6,
+        "Sprite": "../Assets/Texture2D/Pets/Snake.png",
+        "PetName": "Snake",
+        "Tooltip": "When friend ahead attacks, deal 5/10/15 damage to one random enemy.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "AfterAttack",
+            "<ActionIf>__Actions": {
+                "<EqualTo>Statement": {
+                    "One": 1,
+                    "LHSName": "Index",
+                    "RHSName": "One"
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 5
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 10
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 15
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

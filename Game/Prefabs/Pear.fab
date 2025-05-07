@@ -1,0 +1,11 @@
+{
+  "<Food>PearFood": {
+    "Sprite": "../Assets/Texture2D/Food/Pear.png",
+    "FoodName": "Pear",
+    "Tooltip": "Give one pet +2/2",
+    "Price": 3,
+    "Type": "Buff",
+    "Targets": 1,
+    "BuffAmt": 2
+  }
+}

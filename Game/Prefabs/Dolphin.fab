@@ -1,0 +1,84 @@
+{
+    "<Pet>DolphinPet": {
+        "ItemType": 0,
+        "Health": 3,
+        "Damage": 4,
+        "MaxHealth": 3,
+        "MaxDamage": 4,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 3,
+        "Sprite": "../Assets/Texture2D/Pets/Dolphin.png",
+        "PetName": "Dolphin",
+        "Tooltip": "At start of battle, deal 3 damage to lowest health enemy. Triggers 1/2/3 time(s).",
+        "<ActionSubscribe>__Actions": {
+            "Type": "StartOfBattle",
+            "<ActionIf>__Actions": {
+                "<EqualTo>Statement": {
+                    "Zero": 0,
+                    "LHSName": "Zero",
+                    "RHSName": "Zero"
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "LowestHealth",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "LowestHealth",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        },
+                        "<ActionDispatch>_DamageEventAgain_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "LowestHealth",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "LowestHealth",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        },
+                        "<ActionDispatch>_DamageEventAgain_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "LowestHealth",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        },
+                        "<ActionDispatch>_DamageEventAgainSaltyRunback_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "LowestHealth",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

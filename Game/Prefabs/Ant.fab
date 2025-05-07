@@ -1,0 +1,76 @@
+{
+  "<Pet>AntPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 2,
+    "MaxHealth": 2,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 1,
+    "Sprite": "../Assets/Texture2D/Pets/Ant.png",
+    "PetName": "Ant",
+    "Tooltip": "On faint, give one random friend 1/2/3 attack and 1/2/3 health.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 1,
+              "Health": 1,
+              "Damage": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 1,
+              "Health": 2,
+              "Damage": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "Random",
+              "NumTargets": 1,
+              "Health": 3,
+              "Damage": 3
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+    "<Pet>OxPet": {
+        "ItemType": 0,
+        "Health": 3,
+        "Damage": 1,
+        "MaxHealth": 3,
+        "MaxDamage": 1,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 3,
+        "Counter": 0,
+        "DefaultCounter": 0,
+        "Sprite": "../Assets/Texture2D/Pets/Ox_2x.png",
+        "PetName": "Ox_2x",
+        "Tooltip": "On friend ahead fainting, gain Melon perk and +1 attack. Works 1/2/3 time",
+        "<ActionSubscribe>__Actions": {
+            "Type": "Faint",
+            "<ActionList>_EventRespond_Actions": {
+                "1<ActionIncrement>_aTickIndex_Actions": {
+                    "Key": "Index",
+                    "Amount": -1.0
+                },
+                "2<ActionIf>_bAbility_Actions": {
+                    "<And>Statement": {
+                        "<EqualTo>Conditions": [
+                            {
+                                "LHSName": "Index",
+                                "RHSName": "EventIndex"
+                            },
+                            {
+                                "LHSName": "Team",
+                                "RHSName": "EventTeam"
+                            }
+                        ],
+                        "<LessThan>Conditions": {
+                            "LHSName": "Counter",
+                            "RHSName": "Level"
+                        }
+                    },
+                    "<ActionDispatch>_BuffEvent_Actions": {
+                        "Type": "Buff",
+                        "Targeting": "Self",
+                        "NumTargets": 1,
+                        "Health": 0,
+                        "Damage": 1
+                    },
+                    "<ActionDispatch>_GetPerk_Actions": {
+                        "Type": "GivePerk",
+                        "Targeting": "Self",
+                        "NumTargets": 1,
+                        "Perk": 5
+                    },
+                    "<ActionIncrement>_CounterCount_Actions": {
+                        "Key": "Counter",
+                        "Amount": 1.0
+                    }
+                },
+                "3<ActionIncrement>_cesetIndex_Actions": {
+                    "Key": "Index",
+                    "Amount": 1.0
+                }
+            }
+        }
+    }
+}

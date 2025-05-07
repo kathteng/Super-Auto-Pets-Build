@@ -1,0 +1,60 @@
+{
+  "<Pet>SquirrelPet": {
+    "ItemType": 0,
+    "Health": 5,
+    "Damage": 2,
+    "MaxHealth": 5,
+    "MaxDamage": 2,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 4,
+    "Sprite": "../Assets/Texture2D/Pets/Squirrel.png",
+    "PetName": "Squirrel",
+    "Tooltip": "On start of turn, discount all shop food by 1/2/3",
+    "<ActionSubscribe>__Actions": {
+      "Type": "StartTurn",
+      "<ActionIf>__Actions": {
+        "<NotEqual>Statement": {
+          "Zero": 0,
+          "RHSName": "Team",
+          "LHSName": "Zero"
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "DiscountShop",
+              "Discount": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "DiscountShop",
+              "Discount": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "DiscountShop",
+              "Discount": 3
+            }
+          }
+        ]
+      }
+    }
+  }
+}

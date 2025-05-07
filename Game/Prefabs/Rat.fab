@@ -1,0 +1,85 @@
+{
+  "<Pet>RatPet": {
+    "ItemType": 0,
+    "Health": 6,
+    "Damage": 3,
+    "MaxHealth": 6,
+    "MaxDamage": 3,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Rat.png",
+    "PetName": "Rat",
+    "Tooltip": "On faint, summon 1/2/3 1/1 Dirty Rats up front for the opponent.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_SummonRat_Actions": {
+              "Type": "SummonEnemy",
+              "Position": 0,
+              "Summon": "DirtyRat"
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_SummonRat_Actions": {
+              "Type": "SummonEnemy",
+              "Position": 0,
+              "Summon": "DirtyRat"
+            },
+            "<ActionDispatch>_SummonRatAgain_Actions": {
+              "Type": "SummonEnemy",
+              "Position": 0,
+              "Summon": "DirtyRat"
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_SummonRat_Actions": {
+              "Type": "SummonEnemy",
+              "Position": 0,
+              "Summon": "DirtyRat"
+            },
+            "<ActionDispatch>_SummonRatAgain_Actions": {
+              "Type": "SummonEnemy",
+              "Position": 0,
+              "Summon": "DirtyRat"
+            },
+            "<ActionDispatch>_SummonRatSoMany_Actions": {
+              "Type": "SummonEnemy",
+              "Position": 0,
+              "Summon": "DirtyRat"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

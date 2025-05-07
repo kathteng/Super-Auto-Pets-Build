@@ -1,0 +1,17 @@
+{
+  "<Pet>CatPet": {
+    "ItemType": 0,
+    "Health": 5,
+    "Damage": 4,
+    "MaxHealth": 5,
+    "MaxDamage": 4,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 6,
+    "Counter": 2,
+    "DefaultCounter": 2,
+    "Sprite": "../Assets/Sprite/Pets/Cat.png",
+    "PetName": "Cat",
+    "Tooltip": "Shop food gives 2/3/4x attack and health twice per turn."
+  }
+}

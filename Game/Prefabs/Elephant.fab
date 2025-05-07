@@ -1,0 +1,91 @@
+{
+    "<Pet>ElephantPet": {
+        "ItemType": 0,
+        "Health": 7,
+        "Damage": 3,
+        "MaxHealth": 7,
+        "MaxDamage": 3,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 3,
+        "Sprite": "../Assets/Texture2D/Pets/Elephant.png",
+        "PetName": "Elephant",
+        "Tooltip": "After attack, deal 1 damage to nearest friend behind. Triggers 1/2/3 time(s).",
+        "<ActionSubscribe>__Actions": {
+            "Type": "AfterAttack",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "Zero": 0,
+                    "<EqualTo>Conditions": {
+                        "LHSName": "Index",
+                        "RHSName": "Zero"
+                    },
+                    "<NotEqual>Conditions": {
+                        "Two": 2,
+                        "LHSName": "Team",
+                        "RHSName": "Two"
+                    }
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "DamageFriend",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "DamageFriend",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        },
+                        "<ActionDispatch>_DamageEventAgain_Actions": {
+                            "Type": "DamageFriend",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "DamageFriend",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        },
+                        "<ActionDispatch>_DamageEventAgain_Actions": {
+                            "Type": "DamageFriend",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        },
+                        "<ActionDispatch>_DamageEventAgainSaltyRunback_Actions": {
+                            "Type": "DamageFriend",
+                            "Targeting": "FriendBehind",
+                            "NumTargets": 1,
+                            "Damage": 1
+                        }
+                    }
+                ]
+            }
+            }
+    }
+}

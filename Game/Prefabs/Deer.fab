@@ -1,0 +1,67 @@
+{
+  "<Pet>DeerPet": {
+    "ItemType": 0,
+    "Health": 1,
+    "Damage": 1,
+    "MaxHealth": 1,
+    "MaxDamage": 1,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 4,
+    "Sprite": "../Assets/Sprite/Pets/Deer_2x.png",
+    "PetName": "Deer",
+    "Tooltip": "On faint, summon one 5/3 Bus with Chili/one 10/6 Bus with Chili/one 15/9 Bus with Chili.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "Summon",
+              "Summon": "Bus"
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "Summon",
+              "Summon": "Bus"
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_SummonEvent_Actions": {
+              "Type": "Summon",
+              "Summon": "Bus"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

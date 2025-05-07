@@ -1,0 +1,76 @@
+{
+  "<Pet>FlamingoPet": {
+    "ItemType": 0,
+    "Health": 2,
+    "Damage": 3,
+    "MaxHealth": 2,
+    "MaxDamage": 3,
+    "XP": 0,
+    "Level": 1,
+    "Tier": 2,
+    "Sprite": "../Assets/Texture2D/Pets/Flamingo.png",
+    "PetName": "Flamingo",
+    "Tooltip": "On faint, give two nearest friends behind 1/2/3 attack and 1/2/3 health.",
+    "<ActionSubscribe>__Actions": {
+      "Type": "Faint",
+      "<ActionIf>__Actions": {
+        "<And>Statement": {
+          "<EqualTo>Conditions": [
+            {
+              "LHSName": "Index",
+              "RHSName": "EventIndex"
+            },
+            {
+              "LHSName": "Team",
+              "RHSName": "EventTeam"
+            }
+          ]
+        },
+        "<ActionIf>_Ability_Actions": [
+          {
+            "<EqualTo>Statement": {
+              "One": 1,
+              "LHSName": "Level",
+              "RHSName": "One"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "FriendBehind",
+              "NumTargets": 2,
+              "Health": 1,
+              "Damage": 1
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Two": 2,
+              "LHSName": "Level",
+              "RHSName": "Two"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "FriendBehind",
+              "NumTargets": 2,
+              "Health": 2,
+              "Damage": 2
+            }
+          },
+          {
+            "<EqualTo>Statement": {
+              "Three": 3,
+              "LHSName": "Level",
+              "RHSName": "Three"
+            },
+            "<ActionDispatch>_BuffEvent_Actions": {
+              "Type": "Buff",
+              "Targeting": "FriendBehind",
+              "NumTargets": 2,
+              "Health": 3,
+              "Damage": 3
+            }
+          }
+        ]
+      }
+    }
+  }
+}

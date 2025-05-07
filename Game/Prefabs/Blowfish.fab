@@ -1,0 +1,73 @@
+{
+    "<Pet>BlowfishPet": {
+        "ItemType": 0,
+        "Health": 6,
+        "Damage": 3,
+        "MaxHealth": 6,
+        "MaxDamage": 3,
+        "XP": 0,
+        "Level": 1,
+        "Tier": 4,
+        "Sprite": "../Assets/Texture2D/Pets/Blowfish.png",
+        "PetName": "Blowfish",
+        "Tooltip": "When hurt, deal 3/6/9 damage to one random enemy.",
+        "<ActionSubscribe>__Actions": {
+            "Type": "Hurt",
+            "<ActionIf>__Actions": {
+                "<And>Statement": {
+                    "<EqualTo>Conditions": [
+                        {
+                            "LHSName": "Index",
+                            "RHSName": "EventIndex"
+                        },
+                        {
+                            "LHSName": "Team",
+                            "RHSName": "EventTeam"
+                        }
+                    ]
+                },
+                "<ActionIf>_Ability_Actions": [
+                    {
+                        "<EqualTo>Statement": {
+                            "One": 1,
+                            "LHSName": "Level",
+                            "RHSName": "One"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 3
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Two": 2,
+                            "LHSName": "Level",
+                            "RHSName": "Two"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 6
+                        }
+                    },
+                    {
+                        "<EqualTo>Statement": {
+                            "Three": 3,
+                            "LHSName": "Level",
+                            "RHSName": "Three"
+                        },
+                        "<ActionDispatch>_DamageEvent_Actions": {
+                            "Type": "Damage",
+                            "Targeting": "Random",
+                            "NumTargets": 1,
+                            "Damage": 9
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
