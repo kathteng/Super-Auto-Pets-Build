@@ -1,0 +1,10 @@
+Dolphin,4,3,1,0;Hippo,8,10,1,3;Parrot,5,3,1,0;Ant,4,7,2,0;Hedgehog,11,11,3,1;
+Deer,5,7,2,0;Whale,3,7,1,0;Skunk,6,8,1,0;Swan,7,10,2,0;Squirrel,5,8,1,0;
+Elephant,6,7,1,1;Fish,8,12,1,3;Cow,4,6,1,0;Seal,7,12,1,0;Worm,3,3,1,1;
+Fish,10,16,3,3;Duck,10,15,2,3;Penguin,2,5,1,0;Snail,4,4,1,0;Shark,4,5,1,3;
+Elephant,13,18,2,2;Pufferfish,5,9,1,3;Dolphin,7,6,1,0;Monkey,1,2,1,0;Penguin,1,2,1,0;
+Camel,12,12,1,3;Rhino,6,7,1,3;Dolphin,5,4,1,0;Squirrel,2,5,1,0;Crocodile,8,4,1,0;
+Hedgehog,6,4,2,0;Badger,12,8,2,0;Pufferfish,7,8,1,3;Parrot,5,3,1,3;Skunk,3,5,1,0;
+Deer,5,5,2,0;Whale,3,7,1,0;Sheep,4,4,2,0;Turkey,6,4,1,0;Horse,10,7,3,0;
+Deer,2,2,1,0;Whale,3,7,1,0;Rooster,8,6,1,0;Shark,6,6,1,0;Tiger,6,4,1,0;
+Fish,7,7,2,0;Armadillo,2,10,1,0;Camel,7,8,1,2;Kangaroo,4,5,2,2;Leopard,10,4,1,0;

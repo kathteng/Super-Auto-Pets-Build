@@ -1,0 +1,9 @@
+Peacock,8,10,2,2;Sheep,5,5,2,4;Kangaroo,4,5,1,2;Fly,7,5,1,6;Turkey,7,8,1,0;
+Deer,4,4,2,1;Rooster,10,6,1,6;Fly,4,4,1,1;Turkey,3,4,1,0;Shark,7,5,2,0;
+Elephant,25,30,2,2;Pufferfish,12,13,2,3;Dolphin,10,9,2,0;Monkey,1,2,1,0;Penguin,6,7,3,0;
+Camel,13,13,2,3;Monkey,8,9,2,3;Snake,10,5,2,0;Wolverine,5,7,1,0;Crocodile,8,4,1,0;
+Badger,14,10,2,0;Hedgehog,6,4,2,6;Pufferfish,8,9,2,3;Parrot,6,4,2,3;Wolverine,7,9,2,0;
+Fish,28,30,2,3;Kangaroo,27,29,2,0;Duck,3,4,1,0;Dragon,6,9,1,0;Penguin,15,15,2,0;
+Peacock,8,10,2,2;Sheep,5,5,2,4;Kangaroo,4,5,1,2;Fly,7,5,1,6;Turkey,7,8,1,0;
+Deer,2,2,1,0;Sheep,4,4,2,0;Rooster,12,10,2,0;Shark,7,7,1,0;Fly,4,4,1,0;
+Camel,17,18,2,7;Kangaroo,5,6,2,2;Shark,2,2,1,0;Monkey,3,4,2,0;Leopard,11,5,1,0;

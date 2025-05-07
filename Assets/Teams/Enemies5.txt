@@ -1,0 +1,7 @@
+Fish,4,5,1,2;Duck,4,5,2,0;Peacock,3,6,1,0;Ant,3,3,1,0;Deer,2,2,1,0;
+Camel,4,5,1,0;Hedgehog,4,2,1,0;Ant,5,6,2,0;Fish,2,3,1,0;Fish,8,7,2,0;
+Deer,2,2,1,0;Camel,5,5,1,2;Peacock,2,5,1,0;Otter,5,7,2,0;Fish,5,7,2,0;
+Hedgehog,4,2,1,0;Hedgehog,4,2,1,0;Badger,8,4,1,0;Pufferfish,5,6,1,0;Fish,6,8,2,0;
+Otter,5,7,2,0;Penguin,1,2,1,0;Flamingo,5,5,1,0;Fish,5,8,2,3;Kangaroo,2,3,1,0;
+Dolphin,4,4,1,2;Swan,1,2,1,0;Otter,5,7,2,0;Kangaroo,3,4,1,0;Elephant,3,8,1,0;
+Fish,6,6,2,0;Pig,5,2,1,2;Camel,3,4,1,0;Kangaroo,2,3,1,0;Mosqito,4,4,1,0;

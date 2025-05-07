@@ -1,0 +1,16 @@
+Cricket,5,8,2,0;Whale,4,8,1,0;Peacock,8,11,2,3;Giraffe,4,5,2,0;Worm,2,4,1,0;
+Flamingo,3,2,1,0;Elephant,5,9,1,0;Peacock,6,9,1,0;Kangaroo,4,5,1,0;Spider,3,3,1,0;
+Cricket,5,8,2,0;Whale,4,8,1,0;Peacock,8,11,2,3;Giraffe,4,5,2,0;Worm,2,4,1,0;
+Fish,9,8,2,3;Skunk,3,5,1,0;Parrot,5,3,1,0;Dolphin,6,5,1,0;Swan,6,6,2,0;
+Ant,5,6,2,1;Camel,5,6,2,1;Kangaroo,3,4,1,0;Dolphin,5,4,1,0;Horse,5,3,2,0;
+Ant,4,5,1,2;Giraffe,1,2,1,0;Fish,12,16,3,5;Giraffe,1,2,1,0;Rabbit,3,4,1,0;
+Cricket,6,10,2,3;Crab,4,1,1,3;Dodo,4,3,1,0;Fish,6,7,2,3;Kangaroo,3,4,1,0;
+Dolphin,7,6,1,0;Penguin,1,2,1,0;Dolphin,4,3,1,0;Skunk,4,6,1,0;Worm,5,7,2,0;
+Peacock,9,22,1,3;Worm,3,5,2,0;Rabbit,2,3,1,0;Ant,2,2,1,0;Hippo,4,6,1,0;
+Flamingo,3,2,1,0;Elephant,6,10,1,2;Pufferfish,3,6,1,3;Dolphin,7,6,1,0;Swan,5,5,1,0;
+Deer,2,2,1,0;Camel,8,8,1,2;Peacock,3,6,1,3;Dolphin,5,4,1,0;Otter,5,7,2,0;
+Hedgehog,6,4,2,0;Badger,9,5,1,0;Pufferfish,6,7,1,3;Parrot,4,2,1,0;Skunk,3,5,1,0;
+Otter,6,8,2,0;Penguin,1,2,1,0;Armadillo,2,10,1,0;Fish,9,12,2,3;Kangaroo,8,9,2,0;
+Hedgehog,5,4,2,1;Hedgehog,3,2,1,1;Hedgehog,5,4,2,1;Hedgehog,5,4,2,1;Whale,11,16,1,1;
+Swan,1,2,1,2;Dolphin,7,7,1,2;Kangaroo,4,5,2,0;Shark,2,2,1,0;Elephant,4,9,1,3;
+Fish,7,7,2,0;Flamingo,3,2,1,0;Camel,7,8,1,2;Kangaroo,3,4,1,0;Mosqito,4,4,1,0;

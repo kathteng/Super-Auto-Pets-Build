@@ -1,0 +1,9 @@
+Camel,3,4,1,0;Peacock,2,5,1,0;Kangaroo,2,3,1,0;Giraffe,1,2,1,0;Swan,1,2,1,0;
+Ant,3,3,1,0;Horse,4,3,2,0;Beaver,4,3,1,0;Dolphin,6,3,1,0;Mosquito,2,2,1,0;
+Swan,1,2,1,0;Fish,4,5,2,0;Beaver,4,3,1,0;Elephant,3,7,1,0;Ant,3,3,1,0;
+Ant,3,4,1,0;Camel,3,4,1,0;Otter,3,5,2,0;Beaver,4,4,1,0;Fish,2,5,1,0;
+Hedgehog,4,2,1,0;Badger,6,3,1,0;Fish,4,6,2,0;Beaver,5,4,1,0;Otter,3,5,1,0;
+Rat,4,6,1,0;Fish,4,5,2,0;Beaver,5,4,1,0;Dolphin,5,3,1,0;Horse,4,3,1,0;
+Otter,2,4,1,0;Pig,5,3,1,0;Flamingo,3,2,1,0;Fish,3,5,1,0;Kangaroo,2,3,1,0;
+Pig,6,4,2,0;Otter,3,5,2,0;Ant,2,4,1,0;Elephant,3,7,1,0;
+Pig,5,2,1,0;Peacock,3,5,1,0;Fish,5,5,2,0;Cricket,2,4,1,0;Mosqito,2,2,1,0;

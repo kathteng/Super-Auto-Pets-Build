@@ -1,0 +1,7 @@
+Camel,21,22,2,3;Parrot,20,18,3,3;Fish,12,13,3,0;Mosquito,11,10,2,0;Worm,6,9,2,1;
+Flamingo,9,8,2,0;Scorpion,18,18,2,8;Peacock,13,17,3,3;Kangaroo,9,11,2,3;Fish,9,9,3,0;
+Camel,11,12,3,3;Peacock,12,15,3,3;Scorpion,11,11,1,8;Sheep,9,9,3,1;Crocodile,12,8,1,3;
+Elephant,34,39,2,2;Pufferfish,27,31,2,3;Dolphin,19,18,2,7;Monkey,2,3,1,7;Penguin,6,7,3,0;
+Fish,44,45,2,3;Kangaroo,44,45,3,3;Dragon,6,9,1,7;Pig,5,2,1,0;Penguin,22,22,2,0;
+Mammoth,6,14,2,6;Sheep,4,4,2,0;Rooster,12,10,2,0;Shark,8,8,2,5;Fly,6,6,2,0;
+Camel,30,31,2,7;Kangaroo,5,6,2,2;Monkey,5,6,2,0;Hippo,8,10,2,0;Leopard,11,5,1,0;

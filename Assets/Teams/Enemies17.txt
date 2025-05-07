@@ -1,0 +1,2 @@
+Mammoth,6,14,2,6;Sheep,4,4,2,7;Rooster,14,12,2,6;Shark,8,8,2,5;Fly,7,7,2,0;
+Camel,42,43,2,3;Kangaroo,6,7,2,2;Hippo,11,13,2,7;Monkey,7,8,3,0;Leopard,11,5,1,0;

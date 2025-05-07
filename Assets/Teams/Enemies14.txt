@@ -1,0 +1,4 @@
+Badger,13,10,3,4;Flamingo,8,7,2,6;Monkey,12,13,2,7;Mosquito,9,11,2,3;Kangaroo,9,11,2,4;
+Flamingo,8,7,2,0;Camel,16,17,2,0;Hippo,14,16,3,3;Ant,9,9,3,0;Fish,8,9,3,1;
+Elephant,29,34,2,2;Pufferfish,22,23,2,3;Dolphin,16,15,2,7;Monkey,2,3,1,0;Penguin,6,7,3,0;
+Fish,39,40,2,3;Kangaroo,39,40,3,3;Dragon,6,9,1,7;Penguin,1,2,1,0;Penguin,18,18,2,0;
